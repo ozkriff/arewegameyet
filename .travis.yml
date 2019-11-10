@@ -27,8 +27,7 @@ after_success:
   - >
     # if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
     if [ $TRAVIS_BRANCH = scripts ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-      curl -Ls https://github.com/davisp/ghp-import/archive/master.tar.gz | \
-        tar --strip-components 1 -C ghp-import -xz
+      curl -Ls https://github.com/davisp/ghp-import/archive/master.tar.gz | tar --strip-components 1 -C ghp-import -xz
 
       ./ghp-import/ghp_import.py public
 
