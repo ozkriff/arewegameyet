@@ -26,11 +26,11 @@ after_success:
 
 after_script: set +e
 
-branches:
-  only:
-    - master
-    - staging
-    - trying
+# branches:
+#   only:
+#     - master
+#     - staging
+#     - trying
 
 notifications:
   email:
