@@ -4,6 +4,7 @@ before_install: set -e
 
 install:
   - export PATH="$PATH:$HOME/.local/bin"
+  - echo 123
   - mkdir -p ~/.local/bin
   - >
     curl -LSfs https://japaric.github.io/trust/install.sh |
