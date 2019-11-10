@@ -28,8 +28,10 @@ after_success:
   - >
     # if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
     if [ $TRAVIS_BRANCH = scripts ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-      ghp-import public
+      # ghp-import public
+      
       # git push -fq https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git gh-pages && echo OK
+      ls
     fi
   # - bash ci/after-success.sh
 
