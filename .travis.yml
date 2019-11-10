@@ -4,7 +4,7 @@ language: rust
 before_install: set -e
 
 install:
-  - pip install ghp-import
+  - pip install --user ghp-import
   - export PATH="$PATH:$HOME/.local/bin"
   - echo 123
   - mkdir -p ~/.local/bin
