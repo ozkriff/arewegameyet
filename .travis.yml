@@ -1,0 +1,36 @@
+language: generic
+
+before_install: set -e
+
+install:
+  - export PATH="$PATH:$HOME/.local/bin"
+  - mkdir -p ~/.local/bin
+  - >
+    curl -LSfs https://japaric.github.io/trust/install.sh |
+        sh -s --
+           --force
+           --git getzola/zola
+           --tag $tag
+           --target x86_64-unknown-linux-gnu
+           --to ~/.local/bin
+  # - bash ci/install.sh
+
+script:
+  - zola build
+  # - bash ci/script.sh
+
+after_success:
+  - ls
+  # - bash ci/after-success.sh
+
+after_script: set +e
+
+branches:
+  only:
+    - master
+    - staging
+    - trying
+
+notifications:
+  email:
+    on_success: never
