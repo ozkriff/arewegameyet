@@ -8,12 +8,12 @@ install:
   - echo 123
   - mkdir -p ~/.local/bin
   - >
-    curl -LSfs https://japaric.github.io/trust/install.sh |
-        sh -s --
-           --force
-           --git getzola/zola
-           --tag $tag
-           --target x86_64-unknown-linux-gnu
+    curl -LSfs https://japaric.github.io/trust/install.sh | \
+        sh -s -- \
+           --force \
+           --git getzola/zola \
+           --tag $tag \
+           --target x86_64-unknown-linux-gnu \
            --to ~/.local/bin
   # - bash ci/install.sh
 
