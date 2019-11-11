@@ -1,44 +1,27 @@
-# language: generic
-language: rust
+language: generic
+# language: rust
 
-before_install: set -e
+env:
+  - ZOLA_RELEASES=https://github.com/getzola/zola/releases/download
+  - ZOLA_V=v0.5.1
+  - ARCH=x86_64-unknown-linux-gnu
 
 install:
-  # - pip install --user ghp-import
-  - export PATH="$PATH:$HOME/.local/bin"
-  - echo 123
-  - mkdir -p ~/.local/bin
-  - >
-    curl -LSfs https://japaric.github.io/trust/install.sh | \
-        sh -s -- \
-           --force \
-           --git getzola/zola \
-           --tag v0.5.1 \
-           --target x86_64-unknown-linux-gnu \
-           --to ~/.local/bin
-  - zola --version
+  # - export PATH="$PATH:$HOME/.local/bin"
+  # - >
+  #   curl -LSfs https://japaric.github.io/trust/install.sh | \
+  #       sh -s -- \
+  #          --force \
+  #          --git getzola/zola \
+  #          --tag v0.5.1 \
+  #          --target x86_64-unknown-linux-gnu \
+  #          --to ~/.local/bin
+  # - curl https://github.com/getzola/zola/releases/download/v0.5.1/zola-v0.5.1-x86_64-unknown-linux-gnu.tar.gz
+  - curl -L ${ZOLA_RELEASES}/${ZOLA_V}/zola-${ZOLA_V}-${ARCH}.tar.gz | tar -xz
+  - ./zola --version
 
 script:
-  - zola build
-      
-# if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-
-# after_success:
-#   - ls
-#   - |
-#     if [ $TRAVIS_BRANCH = scripts ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-#       ghp-import public
-#       git push -fq https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git gh-pages && echo OK
-#     fi
-#   - ls
-
-after_script: set +e
-
-# branches:
-#   only:
-#     - master
-#     - staging
-#     - trying
+  - ./zola build
 
 notifications:
   email:
@@ -51,4 +34,4 @@ deploy:
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
-    branch: scripts
+    branch: scripts  # TODO: change to master
