@@ -29,9 +29,8 @@ script:
 
 after_success:
   - ls
-  - >
-    if [ $TRAVIS_BRANCH = scripts ] && [ $TRAVIS_PULL_REQUEST = false ]
-    then
+  - |
+    if [ $TRAVIS_BRANCH = scripts ] && [ $TRAVIS_PULL_REQUEST = false ]; then
       ls
     fi
   - ls
