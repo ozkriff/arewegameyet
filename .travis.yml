@@ -4,7 +4,7 @@ language: rust
 before_install: set -e
 
 install:
-  - pip install --user ghp-import
+  # - pip install --user ghp-import
   - export PATH="$PATH:$HOME/.local/bin"
   - echo 123
   - mkdir -p ~/.local/bin
@@ -16,15 +16,12 @@ install:
            --tag v0.5.1 \
            --target x86_64-unknown-linux-gnu \
            --to ~/.local/bin
-  # - bash ci/install.sh
   - zola --version
 
 script:
   - zola build
-  # - bash ci/script.sh
       
 # if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-
 
 after_success:
   - ls
@@ -46,3 +43,12 @@ after_script: set +e
 notifications:
   email:
     on_success: never
+
+deploy:
+  provider: pages
+  local_dir: public
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: scripts
