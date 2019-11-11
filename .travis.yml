@@ -24,14 +24,14 @@ script:
   # - bash ci/script.sh
       
 # if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-# ghp-import public
-# git push -fq https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git gh-pages && echo OK
+
 
 after_success:
   - ls
   - |
     if [ $TRAVIS_BRANCH = scripts ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-      ls
+      ghp-import public
+      git push -fq https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git gh-pages && echo OK
     fi
   - ls
 
