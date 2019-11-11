@@ -2,9 +2,10 @@ language: generic
 # language: rust
 
 env:
-  - ZOLA_RELEASES=https://github.com/getzola/zola/releases/download
-  - ZOLA_V=v0.5.1
-  - ARCH=x86_64-unknown-linux-gnu
+  global
+    - ZOLA_RELEASES=https://github.com/getzola/zola/releases/download
+    - ZOLA_V=v0.5.1
+    - ARCH=x86_64-unknown-linux-gnu
 
 install:
   # - export PATH="$PATH:$HOME/.local/bin"
