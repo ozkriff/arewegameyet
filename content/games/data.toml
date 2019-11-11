@@ -99,7 +99,7 @@ description = "A program that lets you view the world"
 link = "//github.com/ozkriff/zemeroth/"
 image = "assets/img/zemeroth.gif"
 name = "Zemeroth"
-description = "A small 2D turn-based hexagonal tactical game made with ggez engine"
+description = "A small 2D turn-based hexagonal tactical game made with ggez engine (that will never be finished)"
 
 [[games]]
 link = "//www.reddit.com/r/rust/comments/795dg4/i_spent_the_last_year_writing_a_plant/"
