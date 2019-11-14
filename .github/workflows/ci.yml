@@ -20,5 +20,6 @@ jobs:
       run: |
         curl -L ${ZOLA_RELEASES}/${ZOLA_V}/zola-${ZOLA_V}-${ARCH}.tar.gz | tar -xz
         ./zola --version
+        ./zola build
     - name: Test Test 3
       run: pwd
