@@ -13,4 +13,12 @@ jobs:
       run: |
         ls
     - name: Test Test 2
+      env:
+        ZOLA_RELEASES: https://github.com/getzola/zola/releases/download
+        ZOLA_V: v0.5.1
+        ARCH: x86_64-unknown-linux-gnu
+      run: |
+        curl -L ${ZOLA_RELEASES}/${ZOLA_V}/zola-${ZOLA_V}-${ARCH}.tar.gz | tar -xz
+        ./zola --version
+    - name: Test Test 3
       run: pwd
