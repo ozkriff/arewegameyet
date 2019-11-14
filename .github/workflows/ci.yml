@@ -1,0 +1,16 @@
+name: Rust
+
+on: [push]
+
+jobs:
+  test_Ubuntu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Test Test 1
+      run: |
+        ls
+    - name: Test Test 2
+      run: pwd
