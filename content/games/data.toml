@@ -7,7 +7,7 @@ description = "Network shooter with physics and destructions"
 [[games]]
 link = "//github.com/ozkriff/zoc/"
 image = "assets/img/zone-of-control.png"
-name = "Zone of Control"
+name = "Z-O-C"
 description = "A turn-based hexagonal strategy game"
 
 [[games]]
