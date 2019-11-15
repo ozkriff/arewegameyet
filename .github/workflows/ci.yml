@@ -23,8 +23,9 @@ jobs:
     - run: ./zola --version
     - run: ./zola build
     - run: ping sdfd.dfd
+    - run: ./zola build
     - name: Deploy
-      if: success()  # TODO: Do I really need this?
+      # if: success()  # TODO: Do I really need this?
       uses: crazy-max/ghaction-github-pages@v1
       with:
         target_branch: gh-pages
