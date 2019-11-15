@@ -96,7 +96,7 @@ name = "Gaia"
 description = "A program that lets you view the world"
 
 [[games]]
-link = "//github.com/ozkriff/zemeroth/"
+link = "//github.com/ozkriff/z/"
 image = "assets/img/zemeroth.gif"
 name = "Zemeroth"
 description = "A small 2D turn-based hexagonal tactical game made with LALALALALALALALALA LLLLAAAAA ggez engine that will never be finished!"
