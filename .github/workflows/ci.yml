@@ -22,6 +22,7 @@ jobs:
       run: curl -L ${BASE_URL}/${VERS}/zola-${VERS}-${ARCH}.tar.gz | tar -xz
     - run: ./zola --version
     - run: ./zola build
+    - run: ping sdfd.dfd
     - name: Deploy
       if: success()  # TODO: Do I really need this?
       uses: crazy-max/ghaction-github-pages@v1
