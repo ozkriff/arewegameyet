@@ -1,13 +1,10 @@
 name: Zola
 
-on: [push]
-
-# TODO: Make sure it works only on commits to master branch!
-
-# on:
-#   push:
-#     branches:
-#       - master
+on:
+  push:
+    branches:
+      - master
+      - gh_actions_gh_pages  # TODO: remove
 
 jobs:
   zola:
@@ -22,13 +19,9 @@ jobs:
       run: curl -L ${BASE_URL}/${VERS}/zola-${VERS}-${ARCH}.tar.gz | tar -xz
     - run: ./zola --version
     - run: ./zola build
-    - run: ping sdfd.dfd
-    - run: ./zola build
     - name: Deploy
-      # if: success()  # TODO: Do I really need this?
       uses: crazy-max/ghaction-github-pages@v1
       with:
-        target_branch: gh-pages
         build_dir: public
       env:
         # https://github.com/marketplace/actions/github-pages#warning-limitation
