@@ -1,4 +1,4 @@
-name: Rust
+name: Zola
 
 on: [push]
 
@@ -10,15 +10,15 @@ on: [push]
 #       - master
 
 jobs:
-  test_Ubuntu:
+  zola:
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: https://github.com/getzola/zola/releases/download
+      VERS: v0.5.1
+      ARCH: x86_64-unknown-linux-gnu
     steps:
     - uses: actions/checkout@v1
     - name: Install Zola
-      env:
-        BASE_URL: https://github.com/getzola/zola/releases/download
-        VERS: v0.5.1
-        ARCH: x86_64-unknown-linux-gnu
       run: curl -L ${BASE_URL}/${VERS}/zola-${VERS}-${ARCH}.tar.gz | tar -xz
     - run: ./zola --version
     - run: ./zola build
@@ -29,4 +29,5 @@ jobs:
         target_branch: gh-pages
         build_dir: public
       env:
-        GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }} # TODO: use `secrets.GITHUB_PAT`
+        # https://github.com/marketplace/actions/github-pages#warning-limitation
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
