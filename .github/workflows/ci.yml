@@ -1,9 +1,6 @@
 name: Zola
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   zola:
@@ -19,6 +16,7 @@ jobs:
     - run: ./zola --version
     - run: ./zola build
     - name: Deploy
+      if: github.ref == 'refs/heads/master'
       uses: crazy-max/ghaction-github-pages@v1
       with:
         build_dir: public
