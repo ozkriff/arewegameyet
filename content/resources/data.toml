@@ -5,16 +5,16 @@ description = "Post-mortem"
 type = "article"
 
 [[resources]]
-link = "//lukaskalbertodt.github.io/2016/09/01/developing-a-game-with-Rust-beginners-some-thoughts-on-tools-and-libraries.html"
-name = "Developing a game with Rust beginners"
-description = "Some thoughts on tools and libraries"
-type = "article"
-
-[[resources]]
 link = "//github.com/kud1ing/awesome-rust"
 name = "Awesome Rust"
 description = "A curated list of Rust code and resources, inspired by other awesome lists"
 type = "list"
+
+[[resources]]
+link = "//lukaskalbertodt.github.io/2016/09/01/developing-a-game-with-Rust-beginners-some-thoughts-on-tools-and-libraries.html"
+name = "Developing a game with Rust beginners"
+description = "Some thoughts on tools and libraries"
+type = "article"
 
 [[resources]]
 link = "//github.com/bwasty/learn-opengl-rs"
